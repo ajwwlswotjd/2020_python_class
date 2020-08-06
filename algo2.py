@@ -83,20 +83,21 @@ nums = tenArr[0:5]
 arr = list(range(1,10))
 random.shuffle(arr)
 arr = arr[0:3]
-strike = 0
-ball = 0
 print(arr)
-user = list(map(int,input("숫자 입력 (예 : 1 2 3) : ").split()))
-
-for i in range(len(user)) :
-    try:
-        idx = arr.index(user[i])
-        if idx == i :
-            strike = strike + 1
-        else : 
-            ball = ball + 1
-        pass
-    except :
-        pass
-
-print("%d볼 %d스트라이크" % (ball,strike))
+while True : 
+    strike = 0
+    ball = 0
+    user = list(map(int,input("숫자 입력 (예 : 1 2 3) : ").split()))
+    for i in range(len(user)) :
+        try:
+            idx = arr.index(user[i])
+            if idx == i :
+                strike = strike + 1
+            else : 
+                ball = ball + 1
+            pass
+        except :
+            pass
+    print("%d볼 %d스트라이크" % (ball,strike))
+    if strike == 3 :
+        break
